@@ -1,5 +1,5 @@
 !!!
-%form{ :method => "get"}
+= form_tag example1_path, method: :get do
 
   -params.each do |key, value|
     = "#{key}: #{value}"
@@ -13,11 +13,9 @@
   %p
     %label
       Check:
-      %input{:type => "checkbox", :name => "a-checkbox-input", :value => "1" }
-      %input{:type => "hidden", :name => "a-hidden-input", :value => "I am hidden"}
-
+      = check_box_tag "a-checkbox-input"
+      = hidden_field_tag "a-hidden-input", "I am hidden"
     %label
       Text
-      %input{:type => "text", :name => "some_text"}
-
-      %input{:type => "submit", :name => "a-submit-input", :value => "submit"}
+      = text_field_tag "some_text"
+      = submit_tag "submit", :name => "a-submit-input"
