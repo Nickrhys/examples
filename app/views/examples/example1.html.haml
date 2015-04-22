@@ -13,9 +13,9 @@
   %p
     %label
       Check:
-      = check_box_tag "a-checkbox-input"
+      = check_box_tag "a_checkbox_input", 1, params[:a_checkbox_input]
       = hidden_field_tag "a-hidden-input", "I am hidden"
     %label
       Text
-      = text_field_tag "some_text"
+      = text_field_tag "some_text", params[:some_text]
       = submit_tag "submit", :name => "a-submit-input"
