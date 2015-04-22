@@ -1,0 +1,23 @@
+!!!
+%form{ :method => "get"}
+
+  -params.each do |key, value|
+    = "#{key}: #{value}"
+    %br
+
+  -#If we wanted to call the method from the controller, we would do it like as below (see ExamplesController as well).
+  -#The standard way of doing things though is in the view (see lines 4 to 6)
+
+  -#%pre= output_params
+
+  %p
+    %label
+      Check:
+      %input{:type => "checkbox", :name => "a-checkbox-input", :value => "1" }
+      %input{:type => "hidden", :name => "a-hidden-input", :value => "I am hidden"}
+
+    %label
+      Text
+      %input{:type => "text", :name => "some_text"}
+
+      %input{:type => "submit", :name => "a-submit-input", :value => "submit"}
